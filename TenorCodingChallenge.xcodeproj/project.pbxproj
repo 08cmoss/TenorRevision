@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A49CC391E7C419D006E1B45 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A49CC381E7C419D006E1B45 /* MovieListViewController.swift */; };
 		743020991E7B6E930015284E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743020981E7B6E930015284E /* AppDelegate.swift */; };
 		7430209E1E7B6E930015284E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7430209C1E7B6E930015284E /* Main.storyboard */; };
 		743020A11E7B6E930015284E /* TenorCodingChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7430209F1E7B6E930015284E /* TenorCodingChallenge.xcdatamodeld */; };
@@ -14,7 +15,6 @@
 		743020A61E7B6E930015284E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 743020A41E7B6E930015284E /* LaunchScreen.storyboard */; };
 		743020B11E7B6E930015284E /* TenorCodingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743020B01E7B6E930015284E /* TenorCodingChallengeTests.swift */; };
 		743020BC1E7B6E930015284E /* TenorCodingChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743020BB1E7B6E930015284E /* TenorCodingChallengeUITests.swift */; };
-		743020CA1E7B6F9D0015284E /* MovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743020C91E7B6F9D0015284E /* MovieListTableViewController.swift */; };
 		743020CC1E7B70BB0015284E /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743020CB1E7B70BB0015284E /* MovieTableViewCell.swift */; };
 		743020CE1E7B72E70015284E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743020CD1E7B72E70015284E /* Movie.swift */; };
 		743020D01E7B75B80015284E /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743020CF1E7B75B80015284E /* MovieController.swift */; };
@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A49CC381E7C419D006E1B45 /* MovieListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		743020951E7B6E930015284E /* TenorCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenorCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		743020981E7B6E930015284E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7430209D1E7B6E930015284E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,13 +55,12 @@
 		743020B71E7B6E930015284E /* TenorCodingChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenorCodingChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		743020BB1E7B6E930015284E /* TenorCodingChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenorCodingChallengeUITests.swift; sourceTree = "<group>"; };
 		743020BD1E7B6E930015284E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		743020C91E7B6F9D0015284E /* MovieListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieListTableViewController.swift; path = TenorCodingChallenge/MovieListTableViewController.swift; sourceTree = "<group>"; };
-		743020CB1E7B70BB0015284E /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieTableViewCell.swift; path = TenorCodingChallenge/MovieTableViewCell.swift; sourceTree = "<group>"; };
-		743020CD1E7B72E70015284E /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = TenorCodingChallenge/Movie.swift; sourceTree = "<group>"; };
-		743020CF1E7B75B80015284E /* MovieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieController.swift; path = TenorCodingChallenge/MovieController.swift; sourceTree = "<group>"; };
+		743020CB1E7B70BB0015284E /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		743020CD1E7B72E70015284E /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		743020CF1E7B75B80015284E /* MovieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
 		743020D11E7B775D0015284E /* Films-user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Films-user.json"; sourceTree = "<group>"; };
 		743020D31E7B79F70015284E /* Films-critic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Films-critic.json"; sourceTree = "<group>"; };
-		743020D71E7B8D1E0015284E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = TenorCodingChallenge/DetailViewController.swift; sourceTree = "<group>"; };
+		743020D71E7B8D1E0015284E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +91,6 @@
 		7430208C1E7B6E920015284E = {
 			isa = PBXGroup;
 			children = (
-				743020D71E7B8D1E0015284E /* DetailViewController.swift */,
-				743020C91E7B6F9D0015284E /* MovieListTableViewController.swift */,
-				743020CB1E7B70BB0015284E /* MovieTableViewCell.swift */,
-				743020CD1E7B72E70015284E /* Movie.swift */,
-				743020CF1E7B75B80015284E /* MovieController.swift */,
 				743020971E7B6E930015284E /* TenorCodingChallenge */,
 				743020AF1E7B6E930015284E /* TenorCodingChallengeTests */,
 				743020BA1E7B6E930015284E /* TenorCodingChallengeUITests */,
@@ -120,6 +115,11 @@
 			children = (
 				743020981E7B6E930015284E /* AppDelegate.swift */,
 				7430209C1E7B6E930015284E /* Main.storyboard */,
+				743020D71E7B8D1E0015284E /* DetailViewController.swift */,
+				1A49CC381E7C419D006E1B45 /* MovieListViewController.swift */,
+				743020CB1E7B70BB0015284E /* MovieTableViewCell.swift */,
+				743020CD1E7B72E70015284E /* Movie.swift */,
+				743020CF1E7B75B80015284E /* MovieController.swift */,
 				743020A21E7B6E930015284E /* Assets.xcassets */,
 				743020A41E7B6E930015284E /* LaunchScreen.storyboard */,
 				743020A71E7B6E930015284E /* Info.plist */,
@@ -286,8 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				743020D01E7B75B80015284E /* MovieController.swift in Sources */,
-				743020CA1E7B6F9D0015284E /* MovieListTableViewController.swift in Sources */,
 				743020A11E7B6E930015284E /* TenorCodingChallenge.xcdatamodeld in Sources */,
+				1A49CC391E7C419D006E1B45 /* MovieListViewController.swift in Sources */,
 				743020CC1E7B70BB0015284E /* MovieTableViewCell.swift in Sources */,
 				743020991E7B6E930015284E /* AppDelegate.swift in Sources */,
 				743020CE1E7B72E70015284E /* Movie.swift in Sources */,
@@ -540,6 +540,7 @@
 				743020C21E7B6E930015284E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		743020C31E7B6E930015284E /* Build configuration list for PBXNativeTarget "TenorCodingChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +549,7 @@
 				743020C51E7B6E930015284E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		743020C61E7B6E930015284E /* Build configuration list for PBXNativeTarget "TenorCodingChallengeUITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +558,7 @@
 				743020C81E7B6E930015284E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

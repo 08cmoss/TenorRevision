@@ -12,14 +12,12 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var longDesc: UITextView!
-    @IBOutlet weak var favorite: UIImageView!
     
     var movie: Movie?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //self.navigationItem.leftBarButtonItem?.title = "Back"
         if let movie = movie {
         updateWith(movie: movie)
         }
@@ -31,7 +29,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func favoritePressed(_ sender: Any) {
-        
+        print("detail favorite pressed")
     }
     
     func updateWith(movie: Movie) {

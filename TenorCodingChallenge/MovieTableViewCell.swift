@@ -14,7 +14,6 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var desc: UITextView!
-    @IBOutlet weak var favorite: UIImageView!
     
 
     override func awakeFromNib() {

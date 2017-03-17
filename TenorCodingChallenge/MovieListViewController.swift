@@ -1,132 +1,77 @@
 //
-//  MovieListTableViewController.swift
+//  MovieListViewController.swift
 //  TenorCodingChallenge
 //
-//  Created by Cameron Moss on 3/16/17.
+//  Created by Cameron Moss on 3/17/17.
 //  Copyright © 2017 Cameron Moss. All rights reserved.
 //
 
 import UIKit
 
-class MovieListTableViewController: UITableViewController {
+class MovieListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var segmentCtrl: UISegmentedControl!
     
+    @IBOutlet weak var myTableView: UITableView!
     var userMovies = [Movie]()
     var criticMovies = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // Do any additional setup after loading the view.
+        self.myTableView.contentInset = UIEdgeInsetsMake(-60, 0, 0, 0);
         if(segmentCtrl.selectedSegmentIndex == 0) {
-        userMovies = MovieController.getUserMovies()
-        self.tableView.reloadData()
+            userMovies = MovieController.getUserMovies()
+            //self.tableView.reloadData()
         }
-        
-        /*
-         MovieController.getMoviesWithSearchTerm(searchTerm) { (movies) -> Void in
-         self.searchResultMovies = movies
-         
-         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-         self.tableView.reloadData()
-         })
-         */
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (segmentCtrl.selectedSegmentIndex == 0) {
             return userMovies.count
         } else {
             return criticMovies.count
         }
     }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieTableViewCell
-
+        
         // Configure the cell...
         if (segmentCtrl.selectedSegmentIndex == 0) {
             let movie = userMovies[indexPath.row]
             cell.name.text = movie.name
             cell.movieImage.downloadedFrom(link: movie.image)
             cell.desc.text = movie.desc
-            cell.favorite.image = UIImage(named: "heartUnfilled")
         } else {
             let movie = criticMovies[indexPath.row]
             cell.name.text = movie.name
             cell.movieImage.downloadedFrom(link: movie.image)
             cell.desc.text = movie.desc
-            cell.favorite.image = UIImage(named: "heartUnfilled")
         }
-
+        
         return cell
     }
-    
     
     @IBAction func segmentCtrlPressed(_ sender: Any) {
         if (segmentCtrl.selectedSegmentIndex == 0) {
             userMovies = MovieController.getUserMovies()
-            self.tableView.reloadData()
+            self.myTableView.reloadData()
         } else {
             criticMovies = MovieController.getCriticMovies()
-            self.tableView.reloadData()
+            self.myTableView.reloadData()
         }
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
@@ -137,7 +82,7 @@ class MovieListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "showDetail" {
             let detailViewController = segue.destination as! DetailViewController
-            if let cell = sender as? MovieTableViewCell, let indexPath = tableView.indexPath(for: cell) {
+            if let cell = sender as? MovieTableViewCell, let indexPath = self.myTableView.indexPath(for: cell) {
                 if (segmentCtrl.selectedSegmentIndex == 0) {
                     let movie = userMovies[indexPath.row]
                     detailViewController.movie = movie
@@ -146,7 +91,7 @@ class MovieListTableViewController: UITableViewController {
                     detailViewController.movie = movie
                 }
             }
-
+            
         }
         
     }
