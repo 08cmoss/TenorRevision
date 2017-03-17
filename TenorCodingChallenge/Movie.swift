@@ -21,6 +21,7 @@ struct Movie {
     var image: String = ""
     var desc: String = ""
     var longDesc: String = ""
+    var isFavorite: Bool = false
     
     init?(jsonDictionary: [String: AnyObject]) {
         

@@ -50,14 +50,18 @@ class MovieListViewController: UIViewController, UITableViewDelegate, UITableVie
         // Configure the cell...
         if (segmentCtrl.selectedSegmentIndex == 0) {
             let movie = userMovies[indexPath.row]
-            cell.name.text = movie.name
-            cell.movieImage.downloadedFrom(link: movie.image)
-            cell.desc.text = movie.desc
+//            cell.name.text = movie.name
+//            cell.movieImage.downloadedFrom(link: movie.image)
+//            cell.desc.text = movie.desc
+            cell.updateWith(movie: movie)
+            cell.delegate = self
         } else {
             let movie = criticMovies[indexPath.row]
-            cell.name.text = movie.name
-            cell.movieImage.downloadedFrom(link: movie.image)
-            cell.desc.text = movie.desc
+//            cell.name.text = movie.name
+//            cell.movieImage.downloadedFrom(link: movie.image)
+//            cell.desc.text = movie.desc
+            cell.updateWith(movie: movie)
+            cell.delegate = self
         }
         
         return cell
@@ -117,5 +121,29 @@ extension UIImageView {
     func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)
+    }
+}
+
+extension MovieListViewController: MovieTableViewCellDelegate {
+    
+    func favoritePressed(sender: MovieTableViewCell) {
+        let indexPath = self.myTableView.indexPath(for: sender)
+        if (segmentCtrl.selectedSegmentIndex == 0) {
+            var movie = userMovies[(indexPath?.row)!]
+            //UserDefaults.standard.setValue(movie.favorite, forKey: "favorite")
+            //movie.isFavorite = !movie.isFavorite
+            //save to persistent storage
+            //sender.updateButton(isFavorite: !movie.isFavorite)
+            movie.isFavorite = !movie.isFavorite
+            self.myTableView.reloadData()
+        } else {
+            var movie = criticMovies[(indexPath?.row)!]
+            //movie.isFavorite = !movie.isFavorite
+            //save to persistent storage
+            //UserDefaults.standard.setValue(movie.favorite, forKey: "favorite")
+            //movie.updateButton(isFavorite: !movie.isFavorite)
+            movie.isFavorite = !movie.isFavorite
+            self.myTableView.reloadData()
+        }
     }
 }

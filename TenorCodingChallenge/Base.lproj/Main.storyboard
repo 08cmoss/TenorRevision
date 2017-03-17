@@ -86,6 +86,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="desc" destination="7Gl-bW-bjt" id="FZx-1P-GvA"/>
+                                            <outlet property="favoriteBtn" destination="2Gh-A7-3DA" id="3EF-zz-C3F"/>
                                             <outlet property="movieImage" destination="Cue-83-ws4" id="w7z-AJ-YdG"/>
                                             <outlet property="name" destination="1ov-ch-Xg8" id="S3i-vL-Piu"/>
                                             <segue destination="AkF-Ue-nwh" kind="show" identifier="showDetail" id="wZi-wk-f4K"/>
