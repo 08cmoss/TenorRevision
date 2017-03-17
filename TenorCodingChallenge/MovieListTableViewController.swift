@@ -13,6 +13,7 @@ class MovieListTableViewController: UITableViewController {
     @IBOutlet weak var segmentCtrl: UISegmentedControl!
     
     var userMovies = [Movie]()
+    var criticMovies = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,11 @@ class MovieListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return userMovies.count
+        if (segmentCtrl.selectedSegmentIndex == 0) {
+            return userMovies.count
+        } else {
+            return criticMovies.count
+        }
     }
 
     
@@ -59,11 +64,19 @@ class MovieListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieTableViewCell
 
         // Configure the cell...
-        let movie = userMovies[indexPath.row]
-        cell.name.text = movie.name
-        cell.movieImage.downloadedFrom(link: movie.image)
-        cell.desc.text = movie.desc
-        cell.favorite.image = UIImage(named: "heartUnfilled")
+        if (segmentCtrl.selectedSegmentIndex == 0) {
+            let movie = userMovies[indexPath.row]
+            cell.name.text = movie.name
+            cell.movieImage.downloadedFrom(link: movie.image)
+            cell.desc.text = movie.desc
+            cell.favorite.image = UIImage(named: "heartUnfilled")
+        } else {
+            let movie = criticMovies[indexPath.row]
+            cell.name.text = movie.name
+            cell.movieImage.downloadedFrom(link: movie.image)
+            cell.desc.text = movie.desc
+            cell.favorite.image = UIImage(named: "heartUnfilled")
+        }
 
         return cell
     }
@@ -74,7 +87,7 @@ class MovieListTableViewController: UITableViewController {
             userMovies = MovieController.getUserMovies()
             self.tableView.reloadData()
         } else {
-            userMovies = MovieController.getCriticMovies()
+            criticMovies = MovieController.getCriticMovies()
             self.tableView.reloadData()
         }
     }
@@ -122,7 +135,19 @@ class MovieListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+        if segue.identifier == "showDetail" {
+            let detailViewController = segue.destination as! DetailViewController
+            if let cell = sender as? MovieTableViewCell, let indexPath = tableView.indexPath(for: cell) {
+                if (segmentCtrl.selectedSegmentIndex == 0) {
+                    let movie = userMovies[indexPath.row]
+                    detailViewController.movie = movie
+                } else {
+                    let movie = criticMovies[indexPath.row]
+                    detailViewController.movie = movie
+                }
+            }
+
+        }
         
     }
     
