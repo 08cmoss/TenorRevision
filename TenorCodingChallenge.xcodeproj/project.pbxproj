@@ -20,6 +20,7 @@
 		743020D01E7B75B80015284E /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743020CF1E7B75B80015284E /* MovieController.swift */; };
 		743020D21E7B775D0015284E /* Films-user.json in Resources */ = {isa = PBXBuildFile; fileRef = 743020D11E7B775D0015284E /* Films-user.json */; };
 		743020D41E7B79F70015284E /* Films-critic.json in Resources */ = {isa = PBXBuildFile; fileRef = 743020D31E7B79F70015284E /* Films-critic.json */; };
+		743020D81E7B8D1E0015284E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743020D71E7B8D1E0015284E /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		743020CF1E7B75B80015284E /* MovieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieController.swift; path = TenorCodingChallenge/MovieController.swift; sourceTree = "<group>"; };
 		743020D11E7B775D0015284E /* Films-user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Films-user.json"; sourceTree = "<group>"; };
 		743020D31E7B79F70015284E /* Films-critic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Films-critic.json"; sourceTree = "<group>"; };
+		743020D71E7B8D1E0015284E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = TenorCodingChallenge/DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		7430208C1E7B6E920015284E = {
 			isa = PBXGroup;
 			children = (
+				743020D71E7B8D1E0015284E /* DetailViewController.swift */,
 				743020C91E7B6F9D0015284E /* MovieListTableViewController.swift */,
 				743020CB1E7B70BB0015284E /* MovieTableViewCell.swift */,
 				743020CD1E7B72E70015284E /* Movie.swift */,
@@ -288,6 +291,7 @@
 				743020CC1E7B70BB0015284E /* MovieTableViewCell.swift in Sources */,
 				743020991E7B6E930015284E /* AppDelegate.swift in Sources */,
 				743020CE1E7B72E70015284E /* Movie.swift in Sources */,
+				743020D81E7B8D1E0015284E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

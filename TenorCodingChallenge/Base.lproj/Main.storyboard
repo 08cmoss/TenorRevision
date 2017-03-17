@@ -44,26 +44,26 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86x-lv-PnP">
-                                            <rect key="frame" x="87" y="8" width="187" height="21"/>
+                                            <rect key="frame" x="87" y="8" width="187" height="13"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aUI-DG-t2e">
-                                            <rect key="frame" x="87" y="37" width="225" height="95"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aUI-DG-t2e">
+                                            <rect key="frame" x="87" y="29" width="225" height="103"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dpR-us-foY">
-                                            <rect key="frame" x="274" y="-1" width="38" height="38"/>
+                                            <rect key="frame" x="274" y="-1" width="38" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="38" id="gme-DI-lUP"/>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8G-cd-5Xv">
-                                            <rect key="frame" x="274" y="-1" width="38" height="38"/>
+                                            <rect key="frame" x="274" y="-1" width="38" height="30"/>
                                             <connections>
                                                 <action selector="favoritePressed:" destination="7c7-z2-Nda" eventType="touchUpInside" id="EzO-tE-QF7"/>
                                             </connections>
@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="1155" y="114.08450704225352"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="jTN-Hy-1Ur">
             <objects>
-                <viewController id="AkF-Ue-nwh" sceneMemberID="viewController">
+                <viewController id="AkF-Ue-nwh" customClass="DetailViewController" customModule="TenorCodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="59y-Hv-Pqg"/>
                         <viewControllerLayoutGuide type="bottom" id="aI4-Q1-D7P"/>
@@ -128,12 +128,62 @@
                     <view key="view" contentMode="scaleToFill" id="EjO-ZX-enh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dA-wP-xAJ">
+                                <rect key="frame" x="127" y="481" width="67" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="JCo-56-LFN"/>
+                                    <constraint firstAttribute="width" constant="67" id="NP5-Gm-Hcg"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="favoritePressed:" destination="AkF-Ue-nwh" eventType="touchUpInside" id="maE-qO-FF6"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartUnfilled" translatesAutoresizingMaskIntoConstraints="NO" id="rto-0p-gqJ">
+                                <rect key="frame" x="127" y="481" width="67" height="67"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXj-RY-WxI">
+                                <rect key="frame" x="16" y="28" width="288" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OV6-z4-TWQ">
+                                <rect key="frame" x="16" y="67.5" width="288" height="265.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1dA-wP-xAJ" firstAttribute="centerX" secondItem="EjO-ZX-enh" secondAttribute="centerX" id="0QP-wG-nBs"/>
+                            <constraint firstItem="LXj-RY-WxI" firstAttribute="leading" secondItem="EjO-ZX-enh" secondAttribute="leadingMargin" id="1d8-32-2LP"/>
+                            <constraint firstItem="rto-0p-gqJ" firstAttribute="height" secondItem="1dA-wP-xAJ" secondAttribute="height" id="27p-NU-epw"/>
+                            <constraint firstItem="LXj-RY-WxI" firstAttribute="top" secondItem="59y-Hv-Pqg" secondAttribute="bottom" constant="8" id="2Sa-eY-k0n"/>
+                            <constraint firstItem="rto-0p-gqJ" firstAttribute="leading" secondItem="1dA-wP-xAJ" secondAttribute="leading" id="Cam-Bv-sSR"/>
+                            <constraint firstItem="OV6-z4-TWQ" firstAttribute="leading" secondItem="EjO-ZX-enh" secondAttribute="leadingMargin" id="JLJ-ad-Y48"/>
+                            <constraint firstItem="rto-0p-gqJ" firstAttribute="width" secondItem="1dA-wP-xAJ" secondAttribute="width" id="Pmu-H9-XY8"/>
+                            <constraint firstItem="rto-0p-gqJ" firstAttribute="bottom" secondItem="1dA-wP-xAJ" secondAttribute="bottom" id="Qa3-rQ-U1A"/>
+                            <constraint firstItem="rto-0p-gqJ" firstAttribute="trailing" secondItem="1dA-wP-xAJ" secondAttribute="trailing" id="S9r-Ko-qop"/>
+                            <constraint firstItem="LXj-RY-WxI" firstAttribute="trailing" secondItem="EjO-ZX-enh" secondAttribute="trailingMargin" id="dXE-pD-gyy"/>
+                            <constraint firstItem="rto-0p-gqJ" firstAttribute="top" secondItem="1dA-wP-xAJ" secondAttribute="top" id="fmS-Rx-em1"/>
+                            <constraint firstItem="aI4-Q1-D7P" firstAttribute="top" secondItem="1dA-wP-xAJ" secondAttribute="bottom" constant="20" id="gYj-FV-JXt"/>
+                            <constraint firstItem="OV6-z4-TWQ" firstAttribute="trailing" secondItem="EjO-ZX-enh" secondAttribute="trailingMargin" id="jfj-bQ-dGU"/>
+                            <constraint firstItem="rto-0p-gqJ" firstAttribute="top" secondItem="OV6-z4-TWQ" secondAttribute="bottom" constant="148" id="pIN-aW-KMN"/>
+                            <constraint firstItem="OV6-z4-TWQ" firstAttribute="top" secondItem="LXj-RY-WxI" secondAttribute="bottom" constant="8" id="qgh-1S-Qei"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="favorite" destination="rto-0p-gqJ" id="5pJ-Oy-UfX"/>
+                        <outlet property="longDesc" destination="OV6-z4-TWQ" id="GH8-e4-S18"/>
+                        <outlet property="movieTitle" destination="LXj-RY-WxI" id="A13-sy-6LS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JkM-IB-0wB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981" y="118"/>
+            <point key="canvasLocation" x="1980" y="117.25352112676056"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="opw-uc-HUC">
@@ -154,4 +204,7 @@
             <point key="canvasLocation" x="157.5" y="114.08450704225352"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heartUnfilled" width="23" height="22"/>
+    </resources>
 </document>
