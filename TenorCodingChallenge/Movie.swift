@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Movie {
+class Movie {
     
     private let kID = "id"
     private let kName = "name"

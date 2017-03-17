@@ -129,20 +129,18 @@ extension MovieListViewController: MovieTableViewCellDelegate {
     func favoritePressed(sender: MovieTableViewCell) {
         let indexPath = self.myTableView.indexPath(for: sender)
         if (segmentCtrl.selectedSegmentIndex == 0) {
-            var movie = userMovies[(indexPath?.row)!]
-            //UserDefaults.standard.setValue(movie.favorite, forKey: "favorite")
-            //movie.isFavorite = !movie.isFavorite
+            let movie = userMovies[(indexPath?.row)!]
             //save to persistent storage
             //sender.updateButton(isFavorite: !movie.isFavorite)
             movie.isFavorite = !movie.isFavorite
+            UserDefaults.standard.setValue(movie.isFavorite, forKey: "favorite")
             self.myTableView.reloadData()
         } else {
-            var movie = criticMovies[(indexPath?.row)!]
-            //movie.isFavorite = !movie.isFavorite
+            let movie = criticMovies[(indexPath?.row)!]
             //save to persistent storage
-            //UserDefaults.standard.setValue(movie.favorite, forKey: "favorite")
             //movie.updateButton(isFavorite: !movie.isFavorite)
             movie.isFavorite = !movie.isFavorite
+            UserDefaults.standard.setValue(movie.isFavorite, forKey: "favorite")
             self.myTableView.reloadData()
         }
     }

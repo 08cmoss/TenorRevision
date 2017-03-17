@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var longDesc: UITextView!
+    @IBOutlet weak var favoriteBtn: UIButton!
     
     var movie: Movie?
     override func viewDidLoad() {
@@ -30,11 +31,19 @@ class DetailViewController: UIViewController {
     
     @IBAction func favoritePressed(_ sender: Any) {
         print("detail favorite pressed")
+        //change tableview heart as well
+        
+        
     }
     
     func updateWith(movie: Movie) {
         movieTitle.text = movie.name
         longDesc.text = movie.longDesc
+        if (movie.isFavorite) {
+            favoriteBtn.setImage(UIImage(named: "heart_filled_outline"), for: .normal)
+        } else {
+            favoriteBtn.setImage(UIImage(named: "heartUnfilled"), for: .normal)
+        }
     }
     
 
@@ -49,3 +58,4 @@ class DetailViewController: UIViewController {
     */
 
 }
+

@@ -181,6 +181,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="favoriteBtn" destination="1dA-wP-xAJ" id="j3P-2z-wcg"/>
                         <outlet property="longDesc" destination="OV6-z4-TWQ" id="GH8-e4-S18"/>
                         <outlet property="movieTitle" destination="LXj-RY-WxI" id="A13-sy-6LS"/>
                     </connections>
